@@ -105,10 +105,10 @@
                 </form>
                 <?php
                 if (isset($_POST['update'])) {
-                    $name = $_POST['name'];
-                    $designation = $_POST['designation'];
-                    $attendance_rate = $_POST['attendance_rate'];
-                    $average_task_efficiency = $_POST['average_task_efficiency'];
+                    $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+                    $designation =htmlspecialchars($_POST['designation'], ENT_QUOTES, 'UTF-8'); 
+                    $attendance_rate = htmlspecialchars($_POST['attendance_rate'], ENT_QUOTES, 'UTF-8');
+                    $average_task_efficiency =htmlspecialchars($_POST['average_task_efficiency'], ENT_QUOTES, 'UTF-8'); 
                     if($attendance_rate < 0 || $attendance_rate > 100) {
                         echo "<p class='error'>Attendance rate must be between 0 and 100.</p>";
                         exit();
